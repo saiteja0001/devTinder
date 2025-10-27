@@ -47,6 +47,9 @@ connectDB()
   .catch((err) => {
     console.log("Database cannot be connected"+err);
   });
+
+// PORT = 7777
+
 // const { adminAuth, userAuth } = require("./middlewares/auth");
 
 // app.use("/admin", adminAuth);

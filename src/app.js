@@ -49,6 +49,13 @@ connectDB()
   });
 
 // PORT = 7777
+// DB_CONNECTION = "mongodb+srv://saitejamogatadakala:sBezDhNRT1Q6jUL9@saitejanode.jlcea.mongodb.net/devTinder"
+// JWTSEC = "DEV@Tinder$45"
+// RPID = "rzp_test_RU7OPQzEmT5gw9"
+// RPSCT ="rrcXi6gIAW5JjefFyP2xpxyM"
+
+//  ("AKIAQDHGKHHXIVTWTPXN")
+//  ("K6hbhEu0bK6THuIo2C8RXd0YuO6lqicsYRjIlyet")
 
 // const { adminAuth, userAuth } = require("./middlewares/auth");
 

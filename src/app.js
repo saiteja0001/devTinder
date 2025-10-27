@@ -48,14 +48,13 @@ connectDB()
     console.log("Database cannot be connected"+err);
   });
 
-// PORT = 7777
-// DB_CONNECTION = "mongodb+srv://saitejamogatadakala:sBezDhNRT1Q6jUL9@saitejanode.jlcea.mongodb.net/devTinder"
-// JWTSEC = "DEV@Tinder$45"
-// RPID = "rzp_test_RU7OPQzEmT5gw9"
-// RPSCT ="rrcXi6gIAW5JjefFyP2xpxyM"
-
-//  ("AKIAQDHGKHHXIVTWTPXN")
-//  ("K6hbhEu0bK6THuIo2C8RXd0YuO6lqicsYRjIlyet")
+  // PORT = 7777
+  // DB_CONNECTION_SECRET = "mongodb+srv://saitejamogatadakala:sBezDhNRT1Q6jUL9@saitejanode.jlcea.mongodb.net/devTinder"
+  // JWT_SECRET = "DEV@Tinder$45"
+  // AWS_ACCESS_KEY = "AKIAQDHGKHHXIVTWTPXN"
+  // AWS_SECRET_KEY = "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"
+  // RAZORPAY_KEY_ID = "rzp_test_RU7OPQzEmT5gw9"
+  // RAZORPAY_KEY_SECRET ="rrcXi6gIAW5JjefFyP2xpxyM"
 
 // const { adminAuth, userAuth } = require("./middlewares/auth");
 

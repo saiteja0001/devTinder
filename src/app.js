@@ -2,33 +2,46 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/database");
 const app = express();
-app.use(express.json());
 const cookieParser = require("cookie-parser");
+require("dotenv").config();
+require("./utils/cronjob");
+const http = require("http");
+
+app.use(cors({
+  origin: "http://localhost:5173",
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  credentials: true
+}));
+app.use(express.json());
 app.use(cookieParser());
 
 const authRouter = require("./routes/auth");
 const profileRouter = require("./routes/profile");
 const requestsRouter = require("./routes/requests");
 const userRouter = require("./routes/user");
+const paymentRouter = require("./routes/payment");
+const initializeSocket = require("./utils/socket");
+const chatRouter = require("./routes/chat");
 
-app.use(cors({
-  origin: 'http://localhost:5173',  // frontend origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true                 // if you use cookies/auth headers
-}));
 app.use("/",authRouter);
 app.use("/",profileRouter);
 app.use("/",requestsRouter);
 app.use("/",userRouter);
+app.use("/", paymentRouter);
+app.use("/", chatRouter);
 
 app.get('/api/test', (req, res) => {
   res.json({ message: 'CORS is working ✅' });
 });
+
+const server = http.createServer(app);
+initializeSocket(server);
+
 connectDB()
   .then(() => {
     console.log("database connection established");
-    app.listen("7777", () =>
-      console.log("server is listening to created to 7777")
+    server.listen(process.env.PORT, () =>
+      console.log(`server is listening to created to ${process.env.PORT}`)
     );
   })
   .catch((err) => {

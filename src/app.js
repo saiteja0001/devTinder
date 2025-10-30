@@ -8,7 +8,8 @@ require("./utils/cronjob");
 const http = require("http");
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  // origin: ["http://localhost:5173", "http://51.21.200.248"],
+  origin: "*",
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   credentials: true
 }));
